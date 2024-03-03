@@ -2,7 +2,7 @@ on:
   push:
     branches: ["dev"]
 jobs:
-  hello-world:
+  OP-Credentials:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,7 +14,7 @@ jobs:
           export-env: true
         env:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
-          SECRET: op://Development/Test_CICD_Creds/username
+          SECRET: op://dev/Test_CICD_Creds/username
 
       - name: Print masked secret
         run: 'echo "Secret: $SECRET"'
